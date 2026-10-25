@@ -1,0 +1,4 @@
+sphinx==9.0.4; python_version < '3.13'
+sphinx==9.2.0; python_version >= '3.13'
+ruff==0.17.2
+build==1.6.1

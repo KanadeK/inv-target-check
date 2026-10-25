@@ -107,7 +107,7 @@ it does not repair an inventory or infer the correct replacement target.
 ## Development
 
 ```sh
-python -m pip install -e . sphinx==9.2.0 ruff==0.17.2 build==1.6.1
+python -m pip install -e . -r requirements-dev.txt
 python -m unittest discover -s tests -v
 ruff check .
 python -m build
@@ -116,5 +116,7 @@ python -m build
 The integration suite builds original fixtures with actual Sphinx `html`,
 `dirhtml` and `singlehtml`, verifies real exports, and removes output pages to
 confirm failures. Sphinx is a development-only dependency; that integration test
-skips if unavailable. CI installs it, and runs on Python 3.11/3.13 on Linux and
-Windows. Symlink creation tests skip on hosts without permission and run on Linux.
+skips if unavailable. CI installs Sphinx 9.0.4 on Python 3.11 and Sphinx 9.2.0
+on Python 3.13, on Linux and Windows. Symlink creation tests skip on hosts without
+permission and run on Linux. Sphinx 9.2 requires Python 3.13; this is a development
+dependency constraint, not a runtime requirement of the auditor.

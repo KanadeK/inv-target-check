@@ -1,3 +1,4 @@
 include README.zh-CN.md CHANGELOG.md SECURITY.md CONTRIBUTING.md
+include requirements-dev.txt
 recursive-include examples *.py *.rst
 recursive-include tests *.py
